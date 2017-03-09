@@ -4,9 +4,10 @@ import ReviewDetail from "../containers/review_detail";
 
 class Reviews extends Component {
     render() {
+        console.log(this.props.params.quadrant)
         return (
             <div>
-                <ReviewList/>
+                <ReviewList quadrant={this.props.params.quadrant}/>
                 <ReviewDetail/>
             </div>
         );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
 import TypeDropdown from './form_inputs/type_dropdown';
-import Rating from 'react-rating';
+// import Rating from 'react-rating';
 
 class ReviewForm extends Component {
     submit(){

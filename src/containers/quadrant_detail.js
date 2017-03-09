@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReviewForm from '../components/review_form';
 import { addReview } from '../actions/add_review';
-// import { bindActionCreators } from 'redux';
+import { selectReview } from '../actions/select_review';
+import { bindActionCreators } from 'redux';
+import { Link } from 'react-router';
 
 class QuadrantDetail extends Component {
     constructor(props){
@@ -13,27 +15,26 @@ class QuadrantDetail extends Component {
         }};
     }
     renderList() {
-        var title;
-        this.props.quadrants.forEach(function(quadrant){
-            if(quadrant.title === this.props.params.title){
-                title = quadrant.reviews;
-            }
-        }.bind(this));
-        return title.map((review)=>{
+        var currentQuadrant = this.props.params.title;
+        var reviews = this.props.quadrants[currentQuadrant].reviews;
+        return reviews.map((review)=>{
             return(
-                <li
-                    key={review.title}
+                <Link key={review.key} to={"/" + currentQuadrant + "/" + review.key}><li
+                    key={review.name}
                     onClick={() => this.props.selectReview(review)}
                     className="list-group-item">
-                    {review.title}
-                </li>
+                    {review.name}
+                </li></Link>
             );
         });
     }
-    handleSubmit = (values) => {
+    handleSubmit = (reviewInfo) => {
         // Do something with the form values
-        console.log(values);
-        console.log(this.props.form);
+        reviewInfo.key = '_' + Math.random().toString(36).substr(2, 9);
+        var dispatched = {};
+        dispatched.payload = reviewInfo;
+        dispatched.quadrant = this.props.params.title;
+        this.props.addReview(reviewInfo);
     }
     render() {
         return (
@@ -57,17 +58,17 @@ function mapStateToProps(state) {
     //     if(quadrant.title === )
     // });
     return{
-        quadrants: state.quadrants,
+        quadrants: state.Quadrants,
         form: state.form
     };
 }
 
 // // Anything returned from this function becomes a prop of ReviewList container.
-// function mapDispatchToProps(dispatch) {
-//     //Whenever selectBook is called, result should be passed to all reducers.
-//     return bindActionCreators({ selectReview: selectReview}, dispatch);
-// }
-//
+function mapDispatchToProps(dispatch) {
+    //Whenever selectBook is called, result should be passed to all reducers.
+    return bindActionCreators({ addReview: addReview, selectReview: selectReview}, dispatch);
+}
+
 // //Promote ReviewList from a component to a container. It needs to know about this new dispatch method selectReview. Make it
 // //available as a prop.
-export default connect(mapStateToProps)(QuadrantDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(QuadrantDetail);

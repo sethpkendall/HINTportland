@@ -4,10 +4,11 @@ import { Link } from 'react-router';
 
 class Quadrants extends Component {
     renderList() {
-        console.log(this.props.quadrants);
-        return this.props.quadrants.map((quadrant)=>{
+        var quads = this.props.quadrants
+        var keys = Object.keys(quads);
+        return keys.map((quadrant)=>{
             return(
-                    <Link to={"/" + quadrant.title}><li className="list-group-item">{quadrant.title}</li></Link>
+                    <Link key={quadrant} to={"/" + quadrant}><li key={quadrant} className="list-group-item">{quadrant}</li></Link>
             );
         });
     }
@@ -22,7 +23,7 @@ class Quadrants extends Component {
 
 function mapStateToProps(state){
     return{
-        quadrants: state.quadrants
+        quadrants: state.Quadrants
     }
 }
 

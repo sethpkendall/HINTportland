@@ -4,14 +4,27 @@ import { selectReview } from '../actions/select_review';
 import { bindActionCreators } from 'redux';
 
 class ReviewList extends Component {
+    componentDidMount(){
+        if(this.props.activeReview){
+            document.getElementById(this.props.activeReview.key).style = 'background-color: lightgrey';
+        }
+    }
+    componentDidUpdate(){
+        document.getElementById(this.props.activeReview.key).style = 'background-color: lightgrey';
+    }
+    newSelection(review){
+        document.getElementById(this.props.activeReview.key).style = 'background-color: #fff';
+        this.props.selectReview(review)
+    }
     renderList() {
-        return this.props.quadrants.Southeast.reviews.map((review)=>{
+        return this.props.quadrants[this.props.quadrant].reviews.map((review)=>{
             return(
                 <li
-                    key={review.title}
-                    onClick={() => this.props.selectReview(review)}
+                    id={review.key}
+                    key={review.name}
+                    onClick={() => this.newSelection(review)}
                     className="list-group-item">
-                    {review.title}
+                    {review.name}
                 </li>
             );
         });
@@ -28,7 +41,8 @@ class ReviewList extends Component {
 function mapStateToProps(state) {
     //Whatever is returned here will be props inside BookList
     return{
-        quadrants: state.quadrants
+        quadrants: state.Quadrants,
+        activeReview: state.ActiveReview
     };
 }
 

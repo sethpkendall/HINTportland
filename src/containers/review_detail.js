@@ -9,8 +9,8 @@ class ReviewDetail extends Component {
         return (
             <div>
                 <h3>Details for:</h3>
-                <div>Title: {this.props.review.title}</div>
-                <div>Pages: {this.props.review.content}</div>
+                <div>Title: {this.props.review.name}</div>
+                <div>Pages: {this.props.review.review}</div>
             </div>
         );
     }
@@ -18,7 +18,7 @@ class ReviewDetail extends Component {
 
 function mapStateToProps(state){
     return{
-        review: state.activeReview
+        review: state.ActiveReview
     };
 }
 
