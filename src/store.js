@@ -3,13 +3,12 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 
-import reviews from './data/reviews';
+import Quadrants from './data/reviews';
 
-const defaultState = {
-    Quadrants: reviews
+const preloadedState = {
+    Quadrants
 };
-console.log(defaultState);
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, preloadedState );
 
 export const history = syncHistoryWithStore(browserHistory, store);
 

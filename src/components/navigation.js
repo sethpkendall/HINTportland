@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 export default class Navigation extends Component {
     render() {
         return (
-            <div>
-                <ul>
+            <div className="nav-div">
+                <ul className="nav-list">
                     <li><Link to="blog">Blog</Link></li>
                     <li><Link to="quadrants">Reviews</Link></li>
                 </ul>

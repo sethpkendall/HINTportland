@@ -13,6 +13,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <h1>HINTportland</h1>
                 <Navigation />
                 {this.content()}
                 {/*{this.props.children}*/}

@@ -22,3 +22,21 @@
 .list-group-item:hover {
   background-color: lightgray;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  display: inline;
+}
+.nav-list{
+  display:flex;
+  justify-content: space-around;
+}
+h1{
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 80px;
+}
