@@ -13,7 +13,7 @@ class ReviewList extends Component {
         document.getElementById(this.props.activeReview.key).style = 'background-color: lightgrey';
     }
     newSelection(review){
-        document.getElementById(this.props.activeReview.key).style = 'background-color: #fff';
+        document.getElementById(this.props.activeReview.key).style = 'background-color: #333';
         this.props.selectReview(review)
     }
     renderList() {
@@ -23,7 +23,7 @@ class ReviewList extends Component {
                     id={review.key}
                     key={review.name}
                     onClick={() => this.newSelection(review)}
-                    className="list-group-item">
+                    className="review">
                     {review.name}
                 </li>
             );
@@ -31,9 +31,12 @@ class ReviewList extends Component {
     }
     render() {
         return (
-            <ul className="list-group col-sm-6">
+        <div className="reviewDiv">
+            <ul>
                 {this.renderList()}
             </ul>
+        </div>
+
         )
     }
 }

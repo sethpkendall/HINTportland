@@ -20,7 +20,7 @@
   to { transform: rotate(360deg); }
 }
 .list-group-item:hover {
-  background-color: lightgray;
+
 }
 
 ul {
@@ -29,9 +29,6 @@ ul {
   padding: 0;
 }
 
-li{
-  display: inline;
-}
 .nav-list{
   display:flex;
   justify-content: space-around;
@@ -45,6 +42,7 @@ li{
 }
 
 .nav-link a{
+
   color: white;
   padding: 14px 16px;
   font-family: 'Reem Kufi', sans-serif;
@@ -64,19 +62,79 @@ h1{
 }
 
 .quadrantsDiv{
+  height: 100%;
+  width: 100%;
   margin: auto;
   margin-top:30px;
   text-align: center;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .quadrant{
-  background-color: rgba(0,0,0,.5);
+  border-radius: 3px;
+  background-color: #333;
   color: #fff;
   margin-top: 10px;
   margin-bottom:10px;
-  font-family: 'Varela Round', sans-serif;
+  padding: 10px;
   font-size: 1.3em;
 }
+
+.quadrant:hover{
+  background-color: #555;
+}
+.quadrant a:hover{
+  text-decoration: none;
+}
+
+.reviewDiv{
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.detailsDiv{
+  text-align: center;
+}
+
+#detailsDiv{
+  margin-top: 30px;
+}
+.review{
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom:10px;
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+.review:hover{
+  background-color: #555;
+}
+.review a:hover{
+  text-decoration: none;
+}
+
+#blogDiv{
+  text-align: center;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+  margin-top: 30px;
+}
+
+#blogDiv ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#blogDiv li{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.5em;
+}
+
 #H{
   color: blue;
 }

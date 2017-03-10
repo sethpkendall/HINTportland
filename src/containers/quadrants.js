@@ -14,14 +14,15 @@ class Quadrants extends Component {
         var keys = Object.keys(quads);
         return keys.map((quadrant)=>{
             return(
-                    <Link key={quadrant} to={"/" + quadrant}><li key={quadrant} className="list-group-item quadrant">{quadrant}</li></Link>
+                    <Link key={quadrant} to={"/" + quadrant}><li key={quadrant} className="quadrant">{quadrant}</li></Link>
             );
         });
     }
     render() {
         return (
         <div className="quadrantsDiv">
-            <ul className="list-group col-sm-4 col-sm-offset-4">
+            <h3>Select a quadrant to view reviews from that part of Portland</h3>
+            <ul className="col-xs-4 col-xs-offset-4">
                 {this.renderList()}
             </ul>
         </div>

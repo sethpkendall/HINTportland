@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import ReviewForm from '../components/review_form';
 import { addReview } from '../actions/add_review';
 import { selectReview } from '../actions/select_review';
@@ -28,7 +28,7 @@ class QuadrantDetail extends Component {
                 <Link key={review.key} to={"/" + currentQuadrant + "/" + review.key}><li
                     key={review.name}
                     onClick={() => this.props.selectReview(review)}
-                    className="list-group-item">
+                    className="review">
                     {review.name}
                 </li></Link>
             );
@@ -53,8 +53,8 @@ class QuadrantDetail extends Component {
                 <div className="col-md-6">
                     <ReviewForm onSubmit={this.handleSubmit} onRate={this.onRate} />
                 </div>
-                <div className="col-md-6">
-                    <ul className="list-group">
+                <div className="col-xs-4 col-xs-offset-1 reviewDiv">
+                    <ul>
                         {this.renderList()}
                     </ul>
                 </div>

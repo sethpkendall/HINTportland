@@ -37,6 +37,7 @@ class ReviewForm extends Component {
                             <option></option>
                             <option value="Bar">Bar</option>
                             <option value="Restaurant">Restaurant</option>
+                            <option value="Brewery">Brewery</option>
                             <option value="Cafe">Cafe</option>
                             <option value="Indoor Activity">Indoor Activity</option>
                             <option value="Outdoor Activity">Outdoor Activity</option>

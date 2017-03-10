@@ -30,7 +30,7 @@ class ReviewDetail extends Component {
             return <div>Select a Review to get started.</div>;
         }
         return (
-            <div>
+            <div className="detailsDiv">
                 <h3>{this.props.review.name} | <span id="typeSpan">{this.props.review.type}</span></h3>
                 <h5> <span>{this.insertPrice()}</span></h5>
                 <h5>{this.props.review.description}</h5>

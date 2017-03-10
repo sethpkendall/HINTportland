@@ -6,10 +6,10 @@ class Reviews extends Component {
     render() {
         return (
             <div id="detailsDiv" className="row">
-                <div className="col-md-6">
+                <div className="col-xs-4 col-xs-offset-1">
                     <ReviewList quadrant={this.props.params.quadrant}/>
                 </div>
-                <div className="col-md-6">
+                <div className="col-xs-6">
                     <ReviewDetail/>
                 </div>
             </div>
