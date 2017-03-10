@@ -1,0 +1,46 @@
+html {
+    background: url(../../../public/portland_aerial.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#submitDiv{
+    text-align: center;
+    padding:10px;
+}
+
+.green{
+    color: green;
+    font-size: 1.7em;
+}
+
+.grey{
+    color:lightgrey;
+    font-size: 1.7em;
+}
+
+#detailsDiv{
+    border: 2px soild black;
+    background:rgba(0,0,0,0);
+}
+
+#typeSpan{
+    font-size: .75em;
+}
+
+.detailGreen{
+    color: green;
+    font-size: .75em;
+}
+
+.detailGrey{
+    color: lightgrey;
+    font-size: .75em;
+}
+
+.text-center{
+    text-align: center;
+    margin: 5px 30px;
+}

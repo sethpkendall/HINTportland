@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, dispatch } from 'react-redux';
 import ReviewForm from '../components/review_form';
 import { addReview } from '../actions/add_review';
 import { selectReview } from '../actions/select_review';
@@ -10,9 +10,12 @@ class QuadrantDetail extends Component {
     constructor(props){
         super(props);
 
-        this.state = {form: {
+        this.state = {
+            form: {},
+            rating: ''
+        };
 
-        }};
+        this.onRate = this.onRate.bind(this);
     }
     renderList() {
         var currentQuadrant = this.props.params.title;
@@ -29,18 +32,23 @@ class QuadrantDetail extends Component {
         });
     }
     handleSubmit = (reviewInfo) => {
-        // Do something with the form values
         reviewInfo.key = '_' + Math.random().toString(36).substr(2, 9);
+        reviewInfo.price = this.state.rating;
         var dispatched = {};
-        dispatched.payload = reviewInfo;
+        dispatched.newReview = reviewInfo;
         dispatched.quadrant = this.props.params.title;
-        this.props.addReview(reviewInfo);
+        console.log(reviewInfo);
+        this.props.addReview(dispatched);
+    }
+
+    onRate(rating){
+        this.setState({rating: rating});
     }
     render() {
         return (
-            <div className="row">
+            <div className="row" id="full">
                 <div className="col-xs-6">
-                    <ReviewForm onSubmit={this.handleSubmit}/>
+                    <ReviewForm onSubmit={this.handleSubmit} onRate={this.onRate} />
                 </div>
                 <div className="col-xs-6">
                     <ul className="list-group">

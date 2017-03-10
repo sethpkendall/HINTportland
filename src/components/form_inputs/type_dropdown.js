@@ -4,11 +4,11 @@ export default class TypeDropdown extends Component {
     render() {
         return (
             <select className="form-control">
-                <option>Restaurant</option>
-                <option>Bar</option>
-                <option>Indoor Activity</option>
-                <option>Outdoor Activity</option>
-                <option>Misc</option>
+                <option value="1" >Restaurant</option>
+                <option value="2">Bar</option>
+                <option value="3">Indoor Activity</option>
+                <option value="4">Outdoor Activity</option>
+                <option value="5">Misc</option>
             </select>
         );
     }

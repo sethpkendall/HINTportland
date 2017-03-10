@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { getQuadrants } from '../actions/get_quadrants';
+import { bindActionCreators } from 'redux';
+import '../components/styles/quadrants.css';
 
 class Quadrants extends Component {
+    componentWillMount(){
+        this.props.getQuadrants();
+    }
     renderList() {
         var quads = this.props.quadrants
         var keys = Object.keys(quads);
@@ -27,4 +33,8 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(Quadrants);
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ getQuadrants: getQuadrants}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Quadrants);
