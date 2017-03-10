@@ -13,7 +13,7 @@ class App extends Component {
     render() {
         return (
             <div id="rootDiv">
-                <h1>HINTportland</h1>
+                <h1 className="text-center"><span id="H">H</span><span id="I">I</span><span id="N">N</span><span id="T">T</span>portland</h1>
                 <Navigation />
                 {this.content()}
                 {/*{this.props.children}*/}

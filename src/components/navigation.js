@@ -6,8 +6,8 @@ export default class Navigation extends Component {
         return (
             <div className="nav-div">
                 <ul className="nav-list">
-                    <li><Link to="blog">Blog</Link></li>
-                    <li><Link to="quadrants">Reviews</Link></li>
+                    <li className="nav-link"><Link to="blog">Blog</Link></li>
+                    <li className="nav-link"><Link to="quadrants">Reviews</Link></li>
                 </ul>
             </div>
         );

@@ -7,6 +7,9 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 
 class QuadrantDetail extends Component {
+    componentDidMount(){
+        document.getElementById('full').className = "backgroundSE"
+    }
     constructor(props){
         super(props);
 
@@ -47,10 +50,10 @@ class QuadrantDetail extends Component {
     render() {
         return (
             <div className="row" id="full">
-                <div className="col-xs-6">
+                <div className="col-md-6">
                     <ReviewForm onSubmit={this.handleSubmit} onRate={this.onRate} />
                 </div>
-                <div className="col-xs-6">
+                <div className="col-md-6">
                     <ul className="list-group">
                         {this.renderList()}
                     </ul>

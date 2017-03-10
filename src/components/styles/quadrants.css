@@ -1,10 +1,10 @@
-html {
-    background: url(../../../public/portland_aerial.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+/*html {*/
+    /*background: url(../../../public/portland_aerial.jpg) no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+/*}*/
 
 #submitDiv{
     text-align: center;
@@ -43,4 +43,16 @@ html {
 .text-center{
     text-align: center;
     margin: 5px 30px;
+}
+
+#full{
+    background-color: red;
+}
+
+.backgroundSE {
+    background: url(../../../public/OMSI.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
