@@ -59,6 +59,7 @@ export default function(state = initialState, action) {
         //...state means unpack this array and insert the contents here
 
         case GET_QUADRANTS:
+            console.log(action.payload);
             return { ...state };
 
         default:

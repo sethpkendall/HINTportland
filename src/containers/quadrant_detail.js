@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import ReviewForm from '../components/review_form';
 import { addReview } from '../actions/add_review';
 import { selectReview } from '../actions/select_review';
